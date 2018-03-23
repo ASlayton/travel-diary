@@ -52,13 +52,28 @@ const locations = [
 const buildACard = (myArray) => {
   let myString = "";
   myArray.forEach(element => {
+    myString += `<div class='location-card'>`;
     myString += `<h1>${element.location}</h1>`;
     myString += `<p>${element.description}</p>`;
     myString += `<img src='${element.img}'>`;
     myString += `<textarea></textarea>`;
-    myString += `<button>Post</button>`;
+    myString += `<button class='location-button' id='${element.id}'>Post</button>`;
+    myString += `</div>`;
   });
   writeToDom(myString, "write-here");
 };
 
 buildACard(locations);
+
+
+//ADD EVENT LISTENER
+const myButtons = document.getElementsByClassName("location-button");
+for(let i = 0; i < myButtons.length; i++) {
+  myButtons[i].addEventListener('click', (e) => {
+    postInput();
+  });
+};
+
+//FUNCTION TO BUILD USER INPUT POST
+const postInput = () => {};
+
