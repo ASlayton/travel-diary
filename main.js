@@ -47,3 +47,18 @@ const locations = [
     img: "images/Vulcan_at_dawn.jpg"
   },
 ];
+
+//BUILD LOCATION CARDS
+const buildACard = (myArray) => {
+  let myString = "";
+  myArray.forEach(element => {
+    myString += `<h1>${element.location}</h1>`;
+    myString += `<p>${element.description}</p>`;
+    myString += `<img src='${element.img}'>`;
+    myString += `<textarea></textarea>`;
+    myString += `<button>Post</button>`;
+  });
+  writeToDom(myString, "write-here");
+};
+
+buildACard(locations);
