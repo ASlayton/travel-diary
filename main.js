@@ -4,7 +4,7 @@ console.log("Why, hello there");
 //WRITE LOCATION CARDS TO DOM FUNCTION
 const writeToDom = (myInnerds, writeHere) => {
   const myElement = document.getElementById(writeHere);
-  myElement.innerHTML = myInnerds;
+  myElement.innerHTML += myInnerds;
 };
 
 
@@ -53,11 +53,11 @@ const buildACard = (myArray) => {
   let myString = "";
   myArray.forEach(element => {
     myString += `<div class='location-card'>`;
-    myString += `<h1>${element.location}</h1>`;
-    myString += `<p>${element.description}</p>`;
-    myString += `<img src='${element.img}'>`;
-    myString += `<textarea></textarea>`;
-    myString += `<button class='location-button' id='${element.id}'>Post</button>`;
+    myString +=   `<h1>${element.location}</h1>`;
+    myString +=   `<p>${element.description}</p>`;
+    myString +=   `<img src='${element.img}'>`;
+    myString +=   `<textarea></textarea>`;
+    myString +=   `<button class='location-button' id='${element.id}'>Post</button>`;
     myString += `</div>`;
   });
   writeToDom(myString, "write-here");
@@ -67,13 +67,26 @@ buildACard(locations);
 
 
 //ADD EVENT LISTENER
-const myButtons = document.getElementsByClassName("location-button");
-for(let i = 0; i < myButtons.length; i++) {
-  myButtons[i].addEventListener('click', (e) => {
-    postInput();
-  });
+const addAllEventListeners = () =>{
+  const myButtons = document.getElementsByClassName("location-button");
+    for(let i = 0; i < myButtons.length; i++) {
+      myButtons[i].addEventListener('click', postInput);
+  };
 };
 
 //FUNCTION TO BUILD USER INPUT POST
-const postInput = () => {};
+const postInput = (e) => {
+  let userInput = e.target.parentNode.children[3].value;
+  const userInputLocation = e.target.parentNode.children[0].innerHTML;
+  console.log(userInputLocation);
+  let postUserInput = "";
+  postUserInput += `<div class='user-diary-entry'>`;
+  postUserInput +=   `<h1>${userInputLocation}</h1>`;
+  postUserInput +=   `<p>${userInput}</p>`;
+  postUserInput += `</div>` 
 
+  writeToDom(postUserInput,"user-input-data-goes-here");
+};
+
+
+addAllEventListeners();
