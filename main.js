@@ -1,6 +1,3 @@
-//ARE WE LINKED?
-console.log("Why, hello there");
-
 //WRITE LOCATION CARDS TO DOM FUNCTION
 const writeToDom = (myInnerds, writeHere) => {
   const myElement = document.getElementById(writeHere);
@@ -63,7 +60,7 @@ const buildACard = (myArray) => {
   writeToDom(myString, "write-here");
 };
 
-buildACard(locations);
+
 
 
 //ADD EVENT LISTENER
@@ -120,11 +117,13 @@ const postInput = (e) => {
   editEventListeners();
 };
 
+//DELETE USER ENTRY
 const deleteEntry = (e) => {
   let elementToDelete  = e.target.parentNode;
   elementToDelete.remove();
 };
 
+//OPEN A TEXTBOX FOR THE USER TO EDIT AN ENTRY
 const editEntry = (e) => {
   let myUserInput = e.target.parentNode.children[4].innerHTML;
   let myParent = e.target.parentNode;
@@ -134,6 +133,7 @@ const editEntry = (e) => {
   submitEditEventListeners();
 };
 
+//SAVE THE USERS EDIT
 const saveEdit = (e) => {
   let myUserInput = e.target.parentNode.children[4].value;
   let myParent = e.target.parentNode;
@@ -168,4 +168,12 @@ const submitEditEventListeners = () => {
   };
 };
 
-addAllEventListeners();
+
+
+
+const startApplication = () => {
+  buildACard(locations);
+  addAllEventListeners();
+};
+
+startApplication();
