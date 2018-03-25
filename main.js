@@ -87,9 +87,15 @@ const timeStamp = () => {
   return dateString;
 };
 
+//CHANGE COLOR OF CARD
+const changeCardColor = (myElementToChange) => {
+  myElementToChange.style.backgroundColor = "pink";
+};
+
 //FUNCTION TO BUILD USER INPUT POST
 const postInput = (e) => {
   let userInput = e.target.parentNode.children[3].value;
+  let myParent = e.target.parentNode;
   const userInputLocation = e.target.parentNode.children[0].innerHTML;
   console.log(userInputLocation);
   let postUserInput = "";
@@ -100,6 +106,7 @@ const postInput = (e) => {
   postUserInput += `</div>` 
 
   writeToDom(postUserInput,"user-input-data-goes-here");
+  changeCardColor(myParent);
 };
 
 
