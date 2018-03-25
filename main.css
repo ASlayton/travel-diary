@@ -1,22 +1,50 @@
 body {
   background-color: antiquewhite;
+  width: 100%;
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Homemade Apple', cursive;
+}
+
+p {
+  font-family: 'PT Mono', monospace;
+}
+
+#write-here {
+  width: 100%;
+  margin: 0;
 }
 
 /* LOCATION CARDS */
 .location-card > img {
   width: 90%;
   margin-left: 5%;
+  height: 50%;
 }
 
 .location-card {
   background-color: slategray;
-  width: 25%;
+  width: 30%;
   height: 500px;
   display: inline-block;
   vertical-align: top;
-  margin: 20px 2.5%;
+  margin-top: 20px;
+  margin-right: 1.6%;
+  margin-left: 1.6%;
   position: relative;
   padding-top: 20px;
+}
+
+.location-card > h3, .location-card > p {
+  width: 90%;
+  margin-left: 5%;
+  height: 10%;
+}
+
+.location-card > button {
+  border-radius: 5px;
 }
 
 button {
@@ -28,4 +56,37 @@ button {
 textarea {
   width: 90%;
   margin-left: 5%;
+}
+
+/* USER INPUT CARD */
+.user-diary-entry {
+  background-color: tan;
+  box-shadow: 5px 5px 10px grey;
+  width: 90%;
+  min-height: 150px;
+  margin: 20px 5%;
+}
+
+.user-diary-entry > h3, .user-diary-entry > h4 {
+  display: inline-block;
+  margin: 5px 0 5px 10px;
+}
+
+.user-diary-entry > h4, .user-diary-entry > img {
+  float: right;
+  clear:right;
+  margin: 5px 10px 5px 0px;
+}
+
+.user-diary-entry > p {
+  margin-left: 20px;
+  width: 80%;  
+}
+
+footer {
+  background-color: slategrey;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  width: 100%;
 }

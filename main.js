@@ -27,8 +27,8 @@ const locations = [
   },
   {
     id: "locale4",
-    location: "Hogwart's School of Magic and Wizardry",
-    description: "With towering spires and shifting staircases, your stay is guaranteed to be a magical one.",
+    location: "Hogwart's S of W & W",
+    description: "Bring a jacket, there may be a draft.",
     img: "images/Hogwarts.jpg"
   },
   {
@@ -53,7 +53,7 @@ const buildACard = (myArray) => {
     myString +=   `<h3>${element.location}</h3>`;
     myString +=   `<p>${element.description}</p>`;
     myString +=   `<img src='${element.img}'>`;
-    myString +=   `<textarea></textarea>`;
+    myString +=   `<textarea placeholder='Describe your visit...'></textarea>`;
     myString +=   `<button class='location-button' id='${element.id}'>Post</button>`;
     myString += `</div>`;
   });
