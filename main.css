@@ -11,14 +11,12 @@ body {
 .location-card {
   background-color: slategray;
   width: 25%;
-  height: 400px;
+  height: 500px;
   display: inline-block;
+  vertical-align: top;
   margin: 20px 2.5%;
   position: relative;
-}
-
-.location-card:focus {
-  background-color: steelblue;
+  padding-top: 20px;
 }
 
 button {
@@ -28,6 +26,6 @@ button {
 }
 
 textarea {
-  width: 50%;
-  margin-left: 25%;
+  width: 90%;
+  margin-left: 5%;
 }

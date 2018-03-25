@@ -53,7 +53,7 @@ const buildACard = (myArray) => {
   let myString = "";
   myArray.forEach(element => {
     myString += `<div class='location-card'>`;
-    myString +=   `<h1>${element.location}</h1>`;
+    myString +=   `<h3>${element.location}</h3>`;
     myString +=   `<p>${element.description}</p>`;
     myString +=   `<img src='${element.img}'>`;
     myString +=   `<textarea></textarea>`;
@@ -81,7 +81,7 @@ const postInput = (e) => {
   console.log(userInputLocation);
   let postUserInput = "";
   postUserInput += `<div class='user-diary-entry'>`;
-  postUserInput +=   `<h1>${userInputLocation}</h1>`;
+  postUserInput +=   `<h3>${userInputLocation}</h3>`;
   postUserInput +=   `<p>${userInput}</p>`;
   postUserInput += `</div>` 
 
