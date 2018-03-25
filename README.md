@@ -6,7 +6,7 @@
 A journal builder of the user's travels.
 
 **Screenshots**
-*Coming soon*
+
 ![Page](https://github.com/ASlayton/travel-diary/blob/master/images/Screenshots/TD-new-scrnsht.png)
 ![Used Page](https://github.com/ASlayton/travel-diary/blob/master/images/Screenshots/TD-used_scrnsht.png)
 
