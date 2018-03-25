@@ -101,13 +101,29 @@ const postInput = (e) => {
   let postUserInput = "";
   postUserInput += `<div class='user-diary-entry'>`;
   postUserInput +=   `<h3>${userInputLocation}</h3>`;
-  postUserInput +=   `<h4>${timeStamp()}</h4>`
+  postUserInput +=   `<h4>${timeStamp()}</h4>`;
+  postUserInput +=   `<img src='images/trashcan.png' alt='trashcan' width='10px' class='delete-me'>`
   postUserInput +=   `<p>${userInput}</p>`;
   postUserInput += `</div>` 
 
   writeToDom(postUserInput,"user-input-data-goes-here");
   changeCardColor(myParent);
+  trashEventListeners();
 };
+
+const deleteEntry = (e) => {
+  let elementToDelete  = e.target.parentNode;
+  elementToDelete.remove();
+};
+
+//ADD EVENT LISTENER TO TRASH
+const trashEventListeners = () => {
+  const allTrashCans = document.getElementsByClassName("delete-me");
+  for(let i = 0; i < allTrashCans.length; i++) {
+    allTrashCans[i].addEventListener('click', deleteEntry);
+  };
+};
+
 
 
 addAllEventListeners();
