@@ -102,18 +102,40 @@ const postInput = (e) => {
   postUserInput += `<div class='user-diary-entry'>`;
   postUserInput +=   `<h3>${userInputLocation}</h3>`;
   postUserInput +=   `<h4>${timeStamp()}</h4>`;
-  postUserInput +=   `<img src='images/trashcan.png' alt='trashcan' width='10px' class='delete-me'>`
+  postUserInput +=   `<img src='images/trashcan.png' alt='trashcan' 
+  width='20px' class='delete-me'>`
+  postUserInput +=   `<img src='images/Black_pencil.svg' alt='pencil' width='20px' class='edit-me'>`
   postUserInput +=   `<p>${userInput}</p>`;
   postUserInput += `</div>` 
 
   writeToDom(postUserInput,"user-input-data-goes-here");
   changeCardColor(myParent);
   trashEventListeners();
+  editEventListeners();
 };
 
 const deleteEntry = (e) => {
   let elementToDelete  = e.target.parentNode;
   elementToDelete.remove();
+};
+
+const editEntry = (e) => {
+  let myUserInput = e.target.parentNode.children[4].innerHTML;
+  let myParent = e.target.parentNode;
+  myParent.children[4].remove();
+  myParent.innerHTML += `<textarea></textarea><button class='submit-edit'>Submit</button>`;
+  myParent.children[4].value = myUserInput;
+  submitEditEventListeners();
+};
+
+const saveEdit = (e) => {
+  let myUserInput = e.target.parentNode.children[4].value;
+  let myParent = e.target.parentNode;
+  myParent.children[4].remove();
+  myParent.children[4].remove();
+  myParent.innerHTML += `<p>${myUserInput}</p>`;
+  trashEventListeners();
+  editEventListeners();
 };
 
 //ADD EVENT LISTENER TO TRASH
@@ -124,6 +146,20 @@ const trashEventListeners = () => {
   };
 };
 
+//ADD EVENT LISTENER TO PENCIL
+const editEventListeners = () => {
+  const allPencils = document.getElementsByClassName("edit-me");
+  for(let i = 0; i < allPencils.length; i++) {
+    allPencils[i].addEventListener('click', editEntry);
+  };
+};
 
+//ADD EDIT SUBMISSION EVENT LISTENERS
+const submitEditEventListeners = () => {
+  const allSubmissions = document.getElementsByClassName("submit-edit");
+  for(let i = 0; i < allSubmissions.length; i++) {
+    allSubmissions[i].addEventListener('click', saveEdit);
+  };
+};
 
 addAllEventListeners();
