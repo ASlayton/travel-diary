@@ -53,7 +53,7 @@ const buildACard = (myArray) => {
     myString +=   `<h3>${element.location}</h3>`;
     myString +=   `<p>${element.description}</p>`;
     myString +=   `<img src='${element.img}'>`;
-    myString +=   `<textarea></textarea>`;
+    myString +=   `<textarea placeholder='Describe your visit...'></textarea>`;
     myString +=   `<button class='location-button' id='${element.id}'>Post</button>`;
     myString += `</div>`;
   });
