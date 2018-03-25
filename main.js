@@ -92,10 +92,15 @@ const changeCardColor = (myElementToChange) => {
   myElementToChange.style.backgroundColor = "pink";
 };
 
+const clearText = (clearTheThing) => {
+  clearTheThing.value = "";
+};
+
 //FUNCTION TO BUILD USER INPUT POST
 const postInput = (e) => {
   let userInput = e.target.parentNode.children[3].value;
   let myParent = e.target.parentNode;
+  let theTextArea = e.target.parentNode.children[3];
   const userInputLocation = e.target.parentNode.children[0].innerHTML;
   console.log(userInputLocation);
   let postUserInput = "";
@@ -110,6 +115,7 @@ const postInput = (e) => {
 
   writeToDom(postUserInput,"user-input-data-goes-here");
   changeCardColor(myParent);
+  clearText(theTextArea);
   trashEventListeners();
   editEventListeners();
 };
