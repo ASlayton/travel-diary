@@ -1,3 +1,33 @@
 body {
   background-color: antiquewhite;
 }
+
+/* LOCATION CARDS */
+.location-card > img {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.location-card {
+  background-color: slategray;
+  width: 25%;
+  height: 400px;
+  display: inline-block;
+  margin: 20px 2.5%;
+  position: relative;
+}
+
+.location-card:focus {
+  background-color: steelblue;
+}
+
+button {
+  display: block;
+  width: 20%;
+  margin-left: 40%;
+}
+
+textarea {
+  width: 50%;
+  margin-left: 25%;
+}
