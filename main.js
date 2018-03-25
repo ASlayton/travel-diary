@@ -74,6 +74,19 @@ const addAllEventListeners = () =>{
   };
 };
 
+//TIMESTAMP FUNCTION
+const timeStamp = () => {
+  let d = new Date();
+  const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const myWeekday = days[d.getDay()];
+  const myMonth = months[d.getMonth()];
+  const myDay = d.getDate();
+  const myYear = d.getFullYear();
+  const dateString = `${myWeekday}, ${myDay} ${myMonth} ${myYear}`;
+  return dateString;
+};
+
 //FUNCTION TO BUILD USER INPUT POST
 const postInput = (e) => {
   let userInput = e.target.parentNode.children[3].value;
@@ -82,6 +95,7 @@ const postInput = (e) => {
   let postUserInput = "";
   postUserInput += `<div class='user-diary-entry'>`;
   postUserInput +=   `<h3>${userInputLocation}</h3>`;
+  postUserInput +=   `<h4>${timeStamp()}</h4>`
   postUserInput +=   `<p>${userInput}</p>`;
   postUserInput += `</div>` 
 
